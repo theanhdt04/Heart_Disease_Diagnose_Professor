@@ -1,8 +1,14 @@
-# Heart Disease Diagnose Professor
+# ❤️ Heart Disease Diagnose Professor
 
-Ứng dụng dự đoán nguy cơ mắc bệnh tim bằng Machine Learning, xây dựng với **Python** và **Streamlit**.
+Ứng dụng dự đoán nguy cơ mắc bệnh tim sử dụng Machine Learning với giao diện được xây dựng bằng **Streamlit**. Dự án sử dụng nhiều mô hình học máy như **CatBoost**, **XGBoost** và **LightGBM** để hỗ trợ dự đoán dựa trên các chỉ số sức khỏe của bệnh nhân.
 
-## Công nghệ sử dụng
+## Demo Repository
+
+GitHub: https://github.com/theanhdt04/Heart_Disease_Diagnose_Professor
+
+---
+
+# Công nghệ sử dụng
 
 - Python 3.10+
 - Streamlit
@@ -16,33 +22,44 @@
 
 ---
 
-## Cấu trúc dự án
+# Cấu trúc thư mục
 
 ```
-Heart_Disease_Diagnose_Professor-main/
+Heart_Disease_Diagnose_Professor/
 │
 ├── app.py                  # Giao diện chính
-├── app_chon.py             # Giao diện phụ (nếu có)
+├── app_chon.py             # Giao diện phụ
 ├── EDA.ipynb               # Phân tích dữ liệu
 ├── modeling.ipynb          # Huấn luyện mô hình
 ├── train.csv               # Dữ liệu gốc
 ├── train_processed.csv     # Dữ liệu sau xử lý
-├── saved_models/           # Các mô hình đã huấn luyện
+├── requirements.txt        # Danh sách thư viện
+├── README.md
+│
+├── saved_models/
 │   ├── cb_model.pkl
 │   ├── xgb_model.pkl
 │   ├── lgb_model.pkl
 │   └── metadata.pkl
-└── README.md
+│
+└── .gitignore
 ```
 
 ---
 
 # Yêu cầu
 
-- Windows 10/11
+Trước khi chạy dự án, cần cài đặt:
+
 - Visual Studio Code
 - Python 3.10 hoặc mới hơn
-- Git (khuyến nghị)
+- Git
+
+Kiểm tra phiên bản Python:
+
+```bash
+python --version
+```
 
 ---
 
@@ -51,27 +68,26 @@ Heart_Disease_Diagnose_Professor-main/
 ## Bước 1. Clone dự án
 
 ```bash
-git clone https://github.com/<username>/<repository>.git
+git clone https://github.com/theanhdt04/Heart_Disease_Diagnose_Professor.git
 ```
 
-Hoặc tải file ZIP và giải nén.
+Di chuyển vào thư mục dự án:
+
+```bash
+cd Heart_Disease_Diagnose_Professor
+```
 
 ---
 
 ## Bước 2. Mở dự án bằng VS Code
 
-Chọn
+Mở Terminal và chạy:
 
-```
-File
-    Open Folder...
+```bash
+code .
 ```
 
-Chọn thư mục
-
-```
-Heart_Disease_Diagnose_Professor-main
-```
+Hoặc mở VS Code → **File → Open Folder...** và chọn thư mục dự án.
 
 ---
 
@@ -80,11 +96,10 @@ Heart_Disease_Diagnose_Professor-main
 Mở Terminal trong VS Code:
 
 ```
-Terminal
-    New Terminal
+Terminal → New Terminal
 ```
 
-Chạy:
+Tạo môi trường ảo:
 
 ```bash
 python -m venv .venv
@@ -94,53 +109,42 @@ python -m venv .venv
 
 ## Bước 4. Kích hoạt môi trường ảo
 
-PowerShell
+### PowerShell
 
 ```powershell
 .venv\Scripts\Activate
 ```
 
-CMD
+### Command Prompt (CMD)
 
 ```cmd
 .venv\Scripts\activate.bat
 ```
 
-Sau khi kích hoạt thành công sẽ xuất hiện
+Sau khi kích hoạt thành công sẽ hiển thị:
 
 ```
 (.venv)
 ```
 
-ở đầu Terminal.
-
 ---
 
-## Bước 5. Cài đặt thư viện
-
-Nếu dự án có file requirements.txt
+## Bước 5. Cài đặt các thư viện
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Nếu chưa có thì cài thủ công
+Nếu gặp lỗi, có thể nâng cấp pip trước:
 
 ```bash
-pip install streamlit
-pip install numpy
-pip install pandas
-pip install scikit-learn
-pip install joblib
-pip install catboost
-pip install xgboost
-pip install lightgbm
+python -m pip install --upgrade pip
 ```
 
-Hoặc
+Sau đó cài lại:
 
 ```bash
-pip install streamlit numpy pandas scikit-learn joblib catboost xgboost lightgbm
+pip install -r requirements.txt
 ```
 
 ---
@@ -151,7 +155,7 @@ pip install streamlit numpy pandas scikit-learn joblib catboost xgboost lightgbm
 streamlit run app.py
 ```
 
-Hoặc
+Hoặc:
 
 ```bash
 python -m streamlit run app.py
@@ -177,39 +181,57 @@ http://localhost:8501
 
 # Các lỗi thường gặp
 
-## Thiếu thư viện
+## 1. Thiếu thư viện
 
-Ví dụ
+Ví dụ:
 
 ```
-ModuleNotFoundError
+ModuleNotFoundError: No module named 'joblib'
 ```
 
-Khắc phục
-
-```bash
-pip install <tên_thư_viện>
-```
-
-Ví dụ
+Khắc phục:
 
 ```bash
 pip install joblib
-pip install scikit-learn
-pip install catboost
-pip install xgboost
-pip install lightgbm
 ```
 
 ---
 
-## Không nhận lệnh streamlit
+Ví dụ:
+
+```
+ModuleNotFoundError: No module named 'catboost'
+```
+
+Khắc phục:
+
+```bash
+pip install catboost
+```
+
+---
+
+Ví dụ:
+
+```
+ModuleNotFoundError: No module named 'sklearn'
+```
+
+Khắc phục:
+
+```bash
+pip install scikit-learn
+```
+
+---
+
+## 2. Không nhận lệnh Streamlit
 
 ```bash
 python -m streamlit run app.py
 ```
 
-Hoặc
+Nếu chưa cài Streamlit:
 
 ```bash
 pip install streamlit
@@ -217,14 +239,18 @@ pip install streamlit
 
 ---
 
-## Kiểm tra phiên bản Python
+## 3. Cập nhật toàn bộ thư viện
 
 ```bash
-python --version
+pip install -r requirements.txt
 ```
 
 ---
 
 # Tác giả
 
-Nguyễn Thế Anh
+**Nguyễn Thế Anh**
+
+Sinh viên Trường Đại học Công nghiệp Hà Nội (HaUI)
+
+GitHub: https://github.com/theanhdt04
