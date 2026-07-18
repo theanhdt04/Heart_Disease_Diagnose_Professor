@@ -1,30 +1,140 @@
 # ❤️ Heart Disease Diagnose Professor
 
-Ứng dụng dự đoán nguy cơ mắc bệnh tim sử dụng Machine Learning với giao diện được xây dựng bằng **Streamlit**. Dự án sử dụng nhiều mô hình học máy như **CatBoost**, **XGBoost** và **LightGBM** để hỗ trợ dự đoán dựa trên các chỉ số sức khỏe của bệnh nhân.
-
-## Demo Repository
-
-GitHub: https://github.com/theanhdt04/Heart_Disease_Diagnose_Professor
+Ứng dụng dự đoán nguy cơ mắc bệnh tim sử dụng **Machine Learning** với giao diện trực quan được xây dựng bằng **Streamlit**. Hệ thống hỗ trợ người dùng nhập các chỉ số sức khỏe và dự đoán nguy cơ mắc bệnh tim bằng các mô hình học máy đã được huấn luyện.
 
 ---
 
-# Công nghệ sử dụng
+# 📌 Giới thiệu dự án
 
-- Python 3.10+
-- Streamlit
-- Scikit-learn
-- CatBoost
-- XGBoost
-- LightGBM
-- Pandas
-- NumPy
-- Joblib
+Bệnh tim mạch là một trong những nguyên nhân gây tử vong hàng đầu trên thế giới. Mục tiêu của dự án là xây dựng một hệ thống hỗ trợ dự đoán nguy cơ mắc bệnh tim dựa trên các đặc trưng sức khỏe của bệnh nhân, giúp minh họa quy trình xây dựng một bài toán Machine Learning từ xử lý dữ liệu đến triển khai ứng dụng.
+
+Dự án bao gồm toàn bộ quy trình:
+
+* Thu thập và tiền xử lý dữ liệu.
+* Phân tích dữ liệu khám phá (Exploratory Data Analysis - EDA).
+* Huấn luyện và đánh giá nhiều mô hình Machine Learning.
+* Lưu mô hình đã huấn luyện.
+* Xây dựng giao diện Web bằng Streamlit để dự đoán trực tiếp.
 
 ---
 
-# Cấu trúc thư mục
+# 🚀 Demo Repository
 
-```
+**GitHub**
+
+https://github.com/theanhdt04/Heart_Disease_Diagnose_Professor
+
+---
+
+# 👨‍💻 Vai trò trong dự án
+
+Trong dự án này, tôi đảm nhiệm toàn bộ quá trình phát triển, bao gồm:
+
+### 1. Thu thập và xử lý dữ liệu
+
+* Chuẩn bị tập dữ liệu dự đoán bệnh tim.
+* Làm sạch dữ liệu.
+* Xử lý dữ liệu thiếu.
+* Chuyển đổi kiểu dữ liệu.
+* Chuẩn hóa dữ liệu đầu vào.
+* Xử lý đặc trưng bằng Pandas và NumPy.
+
+---
+
+### 2. Phân tích dữ liệu (EDA)
+
+Sử dụng:
+
+* Pandas
+* NumPy
+
+Thực hiện:
+
+* Khám phá dữ liệu.
+* Thống kê mô tả.
+* Kiểm tra phân bố dữ liệu.
+* Phân tích mối quan hệ giữa các đặc trưng.
+* Chuẩn bị dữ liệu trước khi huấn luyện.
+
+---
+
+### 3. Xây dựng mô hình Machine Learning
+
+Huấn luyện và đánh giá nhiều thuật toán:
+
+* CatBoost
+* XGBoost
+* LightGBM
+
+Các bước thực hiện:
+
+* Huấn luyện mô hình.
+* Đánh giá hiệu suất.
+* So sánh kết quả giữa các mô hình.
+* Lựa chọn mô hình phù hợp nhất để triển khai.
+
+---
+
+### 4. Lưu và quản lý mô hình
+
+Sử dụng:
+
+* Joblib
+
+Bao gồm:
+
+* Lưu mô hình đã huấn luyện.
+* Quản lý metadata của mô hình.
+* Tải mô hình phục vụ dự đoán.
+
+---
+
+### 5. Phát triển ứng dụng Web
+
+Sử dụng:
+
+* Streamlit
+
+Chức năng:
+
+* Nhập thông tin sức khỏe của bệnh nhân.
+* Thực hiện dự đoán theo thời gian thực.
+* Hiển thị kết quả trực quan.
+* Kết nối trực tiếp với mô hình Machine Learning đã huấn luyện.
+
+---
+
+# 🛠️ Công nghệ sử dụng
+
+## Programming Language
+
+* Python 3.10+
+
+## Machine Learning
+
+* Scikit-learn
+* CatBoost
+* XGBoost
+* LightGBM
+
+## Data Processing
+
+* Pandas
+* NumPy
+
+## Model Management
+
+* Joblib
+
+## Web Framework
+
+* Streamlit
+
+---
+
+# 📂 Cấu trúc thư mục
+
+```text
 Heart_Disease_Diagnose_Professor/
 │
 ├── app.py                  # Giao diện chính
@@ -33,7 +143,7 @@ Heart_Disease_Diagnose_Professor/
 ├── modeling.ipynb          # Huấn luyện mô hình
 ├── train.csv               # Dữ liệu gốc
 ├── train_processed.csv     # Dữ liệu sau xử lý
-├── requirements.txt        # Danh sách thư viện
+├── requirements.txt
 ├── README.md
 │
 ├── saved_models/
@@ -47,59 +157,19 @@ Heart_Disease_Diagnose_Professor/
 
 ---
 
-# Yêu cầu
+# ⚙️ Hướng dẫn cài đặt
 
-Trước khi chạy dự án, cần cài đặt:
-
-- Visual Studio Code
-- Python 3.10 hoặc mới hơn
-- Git
-
-Kiểm tra phiên bản Python:
-
-```bash
-python --version
-```
-
----
-
-# Hướng dẫn chạy dự án bằng Visual Studio Code
-
-## Bước 1. Clone dự án
+## Clone dự án
 
 ```bash
 git clone https://github.com/theanhdt04/Heart_Disease_Diagnose_Professor.git
-```
 
-Di chuyển vào thư mục dự án:
-
-```bash
 cd Heart_Disease_Diagnose_Professor
 ```
 
 ---
 
-## Bước 2. Mở dự án bằng VS Code
-
-Mở Terminal và chạy:
-
-```bash
-code .
-```
-
-Hoặc mở VS Code → **File → Open Folder...** và chọn thư mục dự án.
-
----
-
-## Bước 3. Tạo môi trường ảo
-
-Mở Terminal trong VS Code:
-
-```
-Terminal → New Terminal
-```
-
-Tạo môi trường ảo:
+## Tạo môi trường ảo
 
 ```bash
 python -m venv .venv
@@ -107,41 +177,23 @@ python -m venv .venv
 
 ---
 
-## Bước 4. Kích hoạt môi trường ảo
+## Kích hoạt môi trường
 
-### PowerShell
+### Windows PowerShell
 
 ```powershell
 .venv\Scripts\Activate
 ```
 
-### Command Prompt (CMD)
+### Windows CMD
 
 ```cmd
 .venv\Scripts\activate.bat
 ```
 
-Sau khi kích hoạt thành công sẽ hiển thị:
-
-```
-(.venv)
-```
-
 ---
 
-## Bước 5. Cài đặt các thư viện
-
-```bash
-pip install -r requirements.txt
-```
-
-Nếu gặp lỗi, có thể nâng cấp pip trước:
-
-```bash
-python -m pip install --upgrade pip
-```
-
-Sau đó cài lại:
+## Cài đặt thư viện
 
 ```bash
 pip install -r requirements.txt
@@ -149,29 +201,19 @@ pip install -r requirements.txt
 
 ---
 
-## Bước 6. Chạy ứng dụng
+## Chạy ứng dụng
 
 ```bash
 streamlit run app.py
 ```
 
-Hoặc:
+Hoặc
 
 ```bash
 python -m streamlit run app.py
 ```
 
----
-
-## Bước 7. Truy cập ứng dụng
-
-Sau khi chạy thành công, Terminal sẽ hiển thị:
-
-```
-Local URL: http://localhost:8501
-```
-
-Mở trình duyệt và truy cập:
+Sau khi chạy thành công, truy cập:
 
 ```
 http://localhost:8501
@@ -179,78 +221,56 @@ http://localhost:8501
 
 ---
 
-# Các lỗi thường gặp
-
-## 1. Thiếu thư viện
-
-Ví dụ:
+# 📊 Quy trình phát triển dự án
 
 ```
-ModuleNotFoundError: No module named 'joblib'
-```
-
-Khắc phục:
-
-```bash
-pip install joblib
-```
-
----
-
-Ví dụ:
-
-```
-ModuleNotFoundError: No module named 'catboost'
-```
-
-Khắc phục:
-
-```bash
-pip install catboost
-```
-
----
-
-Ví dụ:
-
-```
-ModuleNotFoundError: No module named 'sklearn'
-```
-
-Khắc phục:
-
-```bash
-pip install scikit-learn
+Thu thập dữ liệu
+        │
+        ▼
+Tiền xử lý dữ liệu
+        │
+        ▼
+Phân tích dữ liệu (EDA)
+        │
+        ▼
+Huấn luyện mô hình
+        │
+        ▼
+Đánh giá mô hình
+        │
+        ▼
+Lưu mô hình (Joblib)
+        │
+        ▼
+Triển khai Streamlit
+        │
+        ▼
+Người dùng nhập dữ liệu
+        │
+        ▼
+Dự đoán nguy cơ bệnh tim
 ```
 
 ---
 
-## 2. Không nhận lệnh Streamlit
+# 📦 Các mô hình sử dụng
 
-```bash
-python -m streamlit run app.py
-```
-
-Nếu chưa cài Streamlit:
-
-```bash
-pip install streamlit
-```
+| Mô hình  | Mục đích                                  |
+| -------- | ----------------------------------------- |
+| CatBoost | Gradient Boosting tối ưu cho dữ liệu bảng |
+| XGBoost  | Thuật toán Boosting hiệu quả và phổ biến  |
+| LightGBM | Huấn luyện nhanh, tối ưu bộ nhớ           |
 
 ---
 
-## 3. Cập nhật toàn bộ thư viện
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# Tác giả
+# 👨‍🎓 Tác giả
 
 **Nguyễn Thế Anh**
 
-Sinh viên Trường Đại học Công nghiệp Hà Nội (HaUI)
+Bachelor of Information Technology
 
-GitHub: https://github.com/theanhdt04
+Hanoi University of Industry (HaUI)
+
+GitHub:
+
+https://github.com/theanhdt04
